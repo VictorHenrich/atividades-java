@@ -7,18 +7,8 @@ import java.nio.file.Path;
 final class AtividadeTamanhoArquivo{
     private final Path caminhoArquivo;
 
-    private static Path concatenarCaminhos(String ...caminhosArquivo){
-        Path caminho = Path.of("");
-
-        for(var __caminho: caminhosArquivo){
-            caminho = caminho.resolve(__caminho);
-        }
-
-        return caminho;
-    }
-
     public AtividadeTamanhoArquivo(String ...caminhosArquivo){
-        this(concatenarCaminhos(caminhosArquivo));
+        this(Utilitarios.concatenarCaminhos(caminhosArquivo));
     }
 
     public AtividadeTamanhoArquivo(String caminhoArquivo){
