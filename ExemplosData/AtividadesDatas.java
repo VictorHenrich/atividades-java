@@ -20,8 +20,8 @@ final class AtividadesDatas{
         for(int indice=0; indice < listaDatas.length; indice++){
             var valorData = listaDatas[indice];
 
-            if(valorData instanceof LocalDate)
-                listaDatas[indice] = ((LocalDate) valorData).atStartOfDay();
+            if(valorData instanceof LocalDate valorSerComparado)
+                listaDatas[indice] = valorSerComparado.atStartOfDay();
         }
 
         var duracao = Duration.between(listaDatas[0], listaDatas[1]);
@@ -41,7 +41,7 @@ final class AtividadesDatas{
     }
 
     public static void main(String[] args) throws Exception{
-        String data = args[0], dataAtual = null;
+        String data = args[0], dataAtual;
 
         var atividade = new AtividadesDatas();
 

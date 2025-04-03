@@ -58,9 +58,7 @@ final class Utilitarios {
 
                 return LocalDate.parse(data, formatador);
 
-            }catch(Exception error){
-                continue;
-            }
+            }catch(Exception error){}
         }
 
         throw new Exception(

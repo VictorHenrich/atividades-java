@@ -1,8 +1,8 @@
 package ExemplosData;
 
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
-import java.time.LocalDate;
 
 final class AtividadesDatasExpiracao {
     public void expiraEm(String data) throws Exception{
@@ -18,8 +18,8 @@ final class AtividadesDatasExpiracao {
         for(var indice=0; indice < datas.length; indice++){
             Temporal valorData = datas[indice];
 
-            if(valorData instanceof LocalDate)
-                datas[indice] = ((LocalDate) valorData).atStartOfDay();
+            if(valorData instanceof LocalDate valorSerComparado)
+                datas[indice] = valorSerComparado.atStartOfDay();
         }
 
         long diferencaAnos = ChronoUnit.YEARS.between(datas[0], datas[1]);
