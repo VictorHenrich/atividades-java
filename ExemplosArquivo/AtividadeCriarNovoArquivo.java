@@ -20,14 +20,11 @@ final class AtividadeCriarNovoArquivo {
     }
 
     public void criarArquivo() throws IOException{
-        var caminhoPasta = this.caminhoArquivo.getParent();
-
         try {
             if(Files.isDirectory(this.caminhoArquivo))
                 throw new IOException("Caminho passado se trata de uma pasta!");
 
-            if(!Files.exists(caminhoPasta))
-                Files.createDirectory(caminhoPasta);
+            Utilitarios.criarPasta(this.caminhoArquivo);
 
             var nomeArquivoDivido = this.caminhoArquivo.getFileName().toString().split("\\.");
 
@@ -35,9 +32,11 @@ final class AtividadeCriarNovoArquivo {
 
             var extensaoArquivo = nomeArquivoDivido[1];
 
-            Files.createFile(caminhoPasta.resolve(
-                nomeArquivo + "_" + System.currentTimeMillis() + "." + extensaoArquivo
-            ));
+            Files.createFile(
+                this.caminhoArquivo.getParent().resolve(
+                    nomeArquivo + "_" + System.currentTimeMillis() + "." + extensaoArquivo
+                )
+            );
 
         } catch (IOException erro) {
             throw new IOException("Falha ao tentar criar novo arquivo!", erro);
