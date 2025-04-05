@@ -1,4 +1,4 @@
-package ExemploInnerClass.AtividadeMunicaoHeroi;
+package ExemplosInnerClass.AtividadeMunicaoHeroi;
 
 final class Heroi{
     private int quantidadeMunicao = 0;

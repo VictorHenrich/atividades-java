@@ -1,4 +1,4 @@
-package ExemploInnerClass.AtividadeMemoriaAplicacao;
+package ExemplosInnerClass.AtividadeMemoriaAplicacao;
 
 public class Memoria {
     private final static Runtime objetoAplicacao = Runtime.getRuntime();

@@ -1,4 +1,4 @@
-package ExemploInnerClass.AtividadeMemoriaAplicacao;
+package ExemplosInnerClass.AtividadeMemoriaAplicacao;
 
 public class AtividadeMemoriaAplicacao {
     public static void main(String[] args) {

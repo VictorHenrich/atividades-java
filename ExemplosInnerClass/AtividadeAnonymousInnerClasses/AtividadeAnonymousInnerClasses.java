@@ -1,4 +1,4 @@
-package ExemploInnerClass.AtividadeAnonymousInnerClasses;
+package ExemplosInnerClass.AtividadeAnonymousInnerClasses;
 
 final class AtividadeAnonymousInnerClasses { 
     public void dolt(Runnable runnable){
