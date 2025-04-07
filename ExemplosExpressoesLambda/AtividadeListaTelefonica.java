@@ -44,7 +44,9 @@ final class AtividadeListaTelefonica {
                 .adicionarContato("Lucas", "4444444444")
                 .adicionarContato("Nathan", "5555555555")
         );
-
+        
+        //OBS: PODE SER FEITO DESTA MANEIRA TAMBÉM
+        /*
         var dadosBusca = listaTelefonica.buscarTelefonePeloNome(nomeContato);
 
         dadosBusca.ifPresent(
@@ -58,6 +60,20 @@ final class AtividadeListaTelefonica {
         dadosBusca.orElseThrow(
             ()-> new ListaTelefonica.ExcecaoContatoNaoLocalizado(nomeContato)
         );
+        */
+
+        listaTelefonica
+            .buscarTelefonePeloNome(nomeContato)
+            .ifPresentOrElse(
+                telefone -> System.out.format(
+                    "Contato '%s' localizado: %s\n", 
+                    nomeContato, 
+                    telefone
+                ),
+                ()-> {
+                    throw new ListaTelefonica.ExcecaoContatoNaoLocalizado(nomeContato);
+                }
+            );
     }
 
 }
